@@ -1,4 +1,3 @@
-i have made some changes to the code please see hem below no action needed yet just review it
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,88 +85,6 @@ i have made some changes to the code please see hem below no action needed yet j
     .fade-enter.active{opacity:1}
   </style>
 </head>
-
-<!-- everything else in your file stays EXACTLY as-is -->
-<body>
-  <!-- (Your existing body and script sections follow unchanged) -->
-</body>
-</html>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calorie Counter – Responsive Web App</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{ --bg:#f7f8fc; --panel:#ffffff; --ink:#0f172a; --muted:#64748b; --line:#e5e7eb; --brand:#2563eb; --ok:#16a34a; --warn:#f59e0b; --danger:#ef4444; --softShadow: 0 8px 30px rgba(2, 6, 23, 0.08); --radius: 16px; }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;color:var(--ink);background:radial-gradient(1200px 600px at 20% -10%,#ffffff 0%,transparent 60%), radial-gradient(900px 500px at 100% 0%,#eaf1ff 0%,transparent 50%), var(--bg);} 
-
-    header{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(8px);background:linear-gradient(180deg,#ffffffcc,#ffffffb3 60%,#ffffff00);border-bottom:1px solid var(--line)}
-    .container{max-width:1100px;margin:0 auto;padding:16px}
-    h1{margin:0;font-size:28px;font-weight:800;letter-spacing:.2px}
-    .sub{color:var(--muted);margin-top:6px}
-
-    .toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    .tabs{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center}
-    .pill{padding:10px 16px;border-radius:999px;background:#f1f5f9;border:1px solid var(--line);cursor:pointer;user-select:none;transition:.2s ease;box-shadow:0 1px 0 #fff inset}
-    .pill:hover{transform:translateY(-1px)}
-    .pill.active{background:var(--brand); color:#fff; border-color:transparent; box-shadow:0 6px 16px rgba(37, 99, 235, .25)}
-
-    .search{display:flex;margin-top:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--softShadow);flex:1}
-    .search input{flex:1;padding:12px 14px;border:0;outline:none;background:transparent;color:var(--ink)}
-    .select{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 10px}
-
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-    @media(min-width:760px){.grid{grid-template-columns:repeat(4,minmax(0,1fr));}}
-
-    .tile{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;min-height:118px;display:flex;flex-direction:column;gap:8px;justify-content:center;align-items:flex-start;box-shadow:var(--softShadow);transition:transform .15s ease, box-shadow .15s ease}
-    .tile:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(2,6,23,0.12)}
-    .tile .emoji{font-size:22px;margin-right:6px}
-    .tile .thumb{width:28px;height:28px;border-radius:8px;object-fit:cover;margin-right:6px;border:1px solid var(--line)}
-    .tile .name{font-weight:700;display:flex;align-items:center}
-    .favorite{color:var(--warn)}
-
-    .totals{position:sticky;bottom:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(160%) blur(6px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:10px 8px}
-
-    .muted{color:var(--muted)}
-    .row{display:flex;gap:10px;align-items:center}
-
-    .btn{background:var(--ok);color:#fff;border:0;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer;transition:transform .1s ease, filter .1s ease}
-    .btn:hover{transform:translateY(-1px);filter:saturate(120%)}
-    .btn.secondary{background:#f1f5f9;color:var(--ink);border:1px solid var(--line)}
-    .btn.danger{background:var(--danger)}
-
-    .list{display:flex;flex-direction:column;gap:10px}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;box-shadow:var(--softShadow)}
-
-    dialog::backdrop{background:rgba(15,23,42,.35)}
-    dialog{border:0;border-radius:18px;background:var(--panel);color:var(--ink);width:min(560px,92vw);box-shadow:0 30px 80px rgba(2,6,23,.25);animation:pop .2s ease}
-    @keyframes pop{from{transform:scale(.98);opacity:.0}to{transform:scale(1);opacity:1}}
-
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .chip{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:8px 12px;cursor:pointer;transition:.15s ease}
-    .chip:hover{transform:translateY(-1px)}
-    .chip.active{background:var(--brand);color:#fff;border-color:transparent}
-
-    .field{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin-top:8px}
-    input[type="number"],input[type="text"],select{background:transparent;border:0;outline:none;color:var(--ink);width:100%;padding:6px 4px}
-
-    .space{height:90px}
-    .custom{display:inline-block;margin-left:6px;font-size:11px;color:#0f172a;background:#d1fae5;border:1px solid #10b981;padding:2px 8px;border-radius:999px}
-    details.edit{margin-top:14px;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:var(--softShadow)}
-    details.edit>summary{cursor:pointer;list-style:none;padding:12px 16px;font-weight:700}
-    details.edit[open]>summary{border-bottom:1px solid var(--line);background:#f8fafc}
-    .edit-body{padding:12px 16px}
-    .grid.small{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-    .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
-    .field input[type="number"]{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;width:100%}
-
-    /* Smooth enter/exit for folder changes */
-    .fade-enter{opacity:.6; transition:opacity .18s ease}
-    .fade-enter.active{opacity:1}
-  </style>
-</head>
 <body>
   <header>
     <div class="container">
@@ -175,14 +92,14 @@ i have made some changes to the code please see hem below no action needed yet j
       <div class="sub">Log foods fast. Numeric or metaphor portions.</div>
       <div class="toolbar">
         <div class="search"><input id="q" placeholder="Search foods (banana, salt, beef...)" /></div>
-        <select id="folderFilter" class="select"></select>
+        <select id="folderFilter" class="select" aria-label="Folder filter"></select>
       </div>
       <div class="tabs">
         <div class="pill active" data-screen="home">Home</div>
         <div class="pill" data-screen="log">Today</div>
         <div class="pill" data-screen="fav">Favorites</div>
-        <button class="pill" id="addIngredientBtn" title="Create an ingredient">➕ Add ingredient</button>
-        <button class="pill" id="manageFoldersBtn" title="Manage folders">📁 Folders</button>
+        <button class="pill" id="addIngredientBtn" title="Create an ingredient" aria-label="Add ingredient">➕ Add ingredient</button>
+        <button class="pill" id="manageFoldersBtn" title="Manage folders" aria-label="Manage folders">📁 Folders</button>
       </div>
     </div>
   </header>
@@ -197,7 +114,7 @@ i have made some changes to the code please see hem below no action needed yet j
   <div class="totals" id="totals"></div>
 
   <!-- Item dialog -->
-  <dialog id="itemDlg">
+  <dialog id="itemDlg" aria-labelledby="itemName">
     <form method="dialog">
       <div class="container">
         <div class="row" style="justify-content:space-between">
@@ -205,7 +122,7 @@ i have made some changes to the code please see hem below no action needed yet j
             <div id="itemName" style="font-weight:800;font-size:20px"></div>
             <div id="itemCat" class="muted" style="margin-top:6px"></div>
           </div>
-          <button type="button" class="btn secondary" id="favBtn">★</button>
+          <button type="button" class="btn secondary" id="favBtn" aria-label="Toggle favorite">★</button>
         </div>
 
         <div class="card" style="margin-top:14px">
@@ -222,6 +139,7 @@ i have made some changes to the code please see hem below no action needed yet j
           <div class="row" style="justify-content:space-between;margin-top:8px;flex-wrap:wrap">
             <div>Cal <span id="pvCal"></span></div>
             <div>P <span id="pvPro"></span>g</div>
+            <div>Carb <span id="pvCarb"></span>g</div>
             <div>Sug <span id="pvSug"></span>g</div>
             <div>Fib <span id="pvFib"></span>g</div>
             <div>Fat <span id="pvFat"></span>g</div>
@@ -238,6 +156,7 @@ i have made some changes to the code please see hem below no action needed yet j
             <div class="grid small">
               <div class="field"><label>Calories</label><input id="editCal" type="number" step="any"></div>
               <div class="field"><label>Protein (g)</label><input id="editPro" type="number" step="any"></div>
+              <div class="field"><label>Carbs (g)</label><input id="editCarb" type="number" step="any"></div>
               <div class="field"><label>Sugars (g)</label><input id="editSug" type="number" step="any"></div>
               <div class="field"><label>Fiber (g)</label><input id="editFib" type="number" step="any"></div>
               <div class="field"><label>Fat (g)</label><input id="editFat" type="number" step="any"></div>
@@ -254,7 +173,7 @@ i have made some changes to the code please see hem below no action needed yet j
   </dialog>
 
   <!-- Create/Edit Ingredient dialog -->
-  <dialog id="editDlg">
+  <dialog id="editDlg" aria-labelledby="ingName">
     <form method="dialog">
       <div class="container">
         <div style="display:flex;justify-content:space-between;align-items:center">
@@ -278,6 +197,7 @@ i have made some changes to the code please see hem below no action needed yet j
           <div class="grid small" style="margin-top:8px">
             <div class="field"><label>Calories</label><input id="ingCal" type="number" step="any"></div>
             <div class="field"><label>Protein (g)</label><input id="ingPro" type="number" step="any"></div>
+            <div class="field"><label>Carbs (g)</label><input id="ingCarb" type="number" step="any"></div>
             <div class="field"><label>Sugars (g)</label><input id="ingSug" type="number" step="any"></div>
             <div class="field"><label>Fiber (g)</label><input id="ingFib" type="number" step="any"></div>
             <div class="field"><label>Fat (g)</label><input id="ingFat" type="number" step="any"></div>
@@ -380,7 +300,10 @@ i have made some changes to the code please see hem below no action needed yet j
 
     function keyForToday(s){ return `cc.${new Date().toISOString().slice(0,10)}.${s}`; }
     function save(){ localStorage.setItem(keyForToday('entries'), JSON.stringify(entries)); localStorage.setItem('favorites', JSON.stringify(favorites)); renderTotals(); renderLog(); renderFav(); }
-    function perGram(n){ return {cal:n.cal/100, protein:n.protein/100, sugar:n.sugar/100, fiber:n.fiber/100, fat:n.fat/100}; }
+    function perGram(n){
+      const carbs100 = (n && (n.carbs!=null ? n.carbs : ((n.sugar||0)+(n.fiber||0)))) || 0; // fallback for older data
+      return {cal:(n.cal||0)/100, protein:(n.protein||0)/100, sugar:(n.sugar||0)/100, fiber:(n.fiber||0)/100, fat:(n.fat||0)/100, carbs:carbs100/100};
+    }
     function round(v,d=1){ return Math.round(v*Math.pow(10,d))/Math.pow(10,d); }
 
     // ---------- Renderers ----------
@@ -394,7 +317,6 @@ i have made some changes to the code please see hem below no action needed yet j
       const chosen = currentFolder;
       let items = allFoods().filter(f=> f.name.toLowerCase().includes(list));
       if(chosen!=='all') items = items.filter(f=> f.folderId===chosen);
-      if(chosen!=='all') items = items.filter(f=> f.folderId);
 
       const main = document.getElementById('main');
       main.classList.add('fade-enter');
@@ -402,11 +324,11 @@ i have made some changes to the code please see hem below no action needed yet j
 
       homeEl.innerHTML = `<div class="grid">${items.map(f=>{
         const emo = f.emoji || EMOJI[f.category] || '🍽️';
-        const img = f.img ? `<img class=\"thumb\" src=\"${f.img}\" alt=\"${f.name}\">` : `<span class=\"emoji\">${emo}</span>`;
-        return `<button class=\"tile\" onclick='openItem("${f.id}")'>
-          <div class=\"name\">${img} ${f.name}</div>
-          <div class=\"muted\">${(folders.find(x=>x.id===f.folderId)?.name||f.category||'')}</div>
-          <div style=\"margin-top:4px\">${favorites.includes(f.id)?'<span class="favorite">★ Favorite</span>':''}</div>
+        const img = f.img ? `<img class="thumb" src="${f.img}" alt="${f.name}">` : `<span class="emoji">${emo}</span>`;
+        return `<button class="tile" onclick='openItem("${f.id}")'>
+          <div class="name">${img} ${f.name}</div>
+          <div class="muted">${(folders.find(x=>x.id===f.folderId)?.name||f.category||'')}</div>
+          <div style="margin-top:4px">${favorites.includes(f.id)?'<span class="favorite">★ Favorite</span>':''}</div>
         </button>`;}).join('') || '<div class="muted">No items here yet.</div>'}</div>`;
 
       const y = Number(folderScroll[currentFolder]||0);
@@ -417,19 +339,20 @@ i have made some changes to the code please see hem below no action needed yet j
       logEl.innerHTML = `<div class="list">${entries.map(e=>{
         const f = findFood(e.food_id);
         const emo = (f?.emoji) || EMOJI[f?.category] || '🍽️';
-        const img = f?.img ? `<img class=\"thumb\" src=\"${f.img}\" alt=\"${f.name}\">` : `<span class=\"emoji\">${emo}</span>`;
-        return `<div class=\"card\"> 
-          <div class=\"row\" style=\"justify-content:space-between\"> 
-            <div style=\"font-weight:700;display:flex;align-items:center\">${img} ${e.name}</div>
-            <button class=\"btn danger\" onclick='delEntry("${e.id}")'>Delete</button>
+        const img = f?.img ? `<img class="thumb" src="${f.img}" alt="${f.name}">` : `<span class="emoji">${emo}</span>`;
+        return `<div class="card"> 
+          <div class="row" style="justify-content:space-between"> 
+            <div style="font-weight:700;display:flex;align-items:center">${img} ${e.name}</div>
+            <button class="btn danger" onclick='delEntry("${e.id}")'>Delete</button>
           </div>
-          <div class=\"muted\" style=\"margin-top:4px\">${Math.round(e.grams)} g</div>
-          <div class=\"row\" style=\"justify-content:space-between;margin-top:8px;flex-wrap:wrap\">
-            <div>Cal ${Math.round(e.nutrients.cal)}</div>
-            <div>P ${round(e.nutrients.protein,1)}g</div>
-            <div>Sug ${round(e.nutrients.sugar,1)}g</div>
-            <div>Fib ${round(e.nutrients.fiber,1)}g</div>
-            <div>Fat ${round(e.nutrients.fat,1)}g</div>
+          <div class="muted" style="margin-top:4px">${Math.round(e.grams)} g</div>
+          <div class="row" style="justify-content:space-between;margin-top:8px;flex-wrap:wrap">
+            <div>Cal ${Math.round(e.nutrients.cal||0)}</div>
+            <div>P ${round(e.nutrients.protein||0,1)}g</div>
+            <div>Carb ${round((e.nutrients.carbs!=null?e.nutrients.carbs:(e.nutrients.sugar||0)+(e.nutrients.fiber||0)),1)}g</div>
+            <div>Sug ${round(e.nutrients.sugar||0,1)}g</div>
+            <div>Fib ${round(e.nutrients.fiber||0,1)}g</div>
+            <div>Fat ${round(e.nutrients.fat||0,1)}g</div>
           </div>
         </div>`;}).join('')}</div>`;
     }
@@ -438,24 +361,24 @@ i have made some changes to the code please see hem below no action needed yet j
       const items = allFoods().filter(f=> favorites.includes(f.id));
       favEl.innerHTML = `<div class="list">${items.map(f=>{
         const emo = f.emoji || EMOJI[f.category] || '🍽️';
-        const img = f.img ? `<img class=\"thumb\" src=\"${f.img}\" alt=\"${f.name}\">` : `<span class=\"emoji\">${emo}</span>`;
-        return `<div class=\"card\"> 
-          <div class=\"row\" style=\"justify-content:space-between;align-items:center\"> 
+        const img = f.img ? `<img class="thumb" src="${f.img}" alt="${f.name}">` : `<span class="emoji">${emo}</span>`;
+        return `<div class="card"> 
+          <div class="row" style="justify-content:space-between;align-items:center"> 
             <div> 
-              <div style=\"font-weight:700;display:flex;align-items:center\">${img} ${f.name}</div>
-              <div class=\"muted\">${(folders.find(x=>x.id===f.folderId)?.name||f.category||'')}</div>
+              <div style="font-weight:700;display:flex;align-items:center">${img} ${f.name}</div>
+              <div class="muted">${(folders.find(x=>x.id===f.folderId)?.name||f.category||'')}</div>
             </div>
-            <div class=\"row\" style=\"gap:8px\"> 
-              <button class=\"btn secondary\" onclick='openItem("${f.id}")'>Add</button>
-              <button class=\"btn\" onclick='toggleFav("${f.id}")' style=\"background:var(--warn)\">★</button>
+            <div class="row" style="gap:8px"> 
+              <button class="btn secondary" onclick='openItem("${f.id}")'>Add</button>
+              <button class="btn" onclick='toggleFav("${f.id}")' style="background:var(--warn)">★</button>
             </div>
           </div>
         </div>`;}).join('') || '<div class="muted">No favorites yet.</div>'}</div>`;
     }
 
     function renderTotals(){
-      const t = entries.reduce((a,e)=>({cal:a.cal+e.nutrients.cal, protein:a.protein+e.nutrients.protein, sugar:a.sugar+e.nutrients.sugar, fiber:a.fiber+e.nutrients.fiber, fat:a.fat+e.nutrients.fat}),{cal:0,protein:0,sugar:0,fiber:0,fat:0});
-      totalsEl.innerHTML = ['cal','protein','sugar','fiber','fat'].map(k=>{ const v=t[k]; return `<div style="text-align:center"><div class="muted" style="font-size:12px">${k.toUpperCase()}</div><div style="font-weight:800;font-size:18px">${k==='cal'?Math.round(v):round(v,1)}${k==='cal'?'':'g'}</div></div>` }).join('');
+      const t = entries.reduce((a,e)=>({cal:a.cal+(e.nutrients.cal||0), protein:a.protein+(e.nutrients.protein||0), carbs:a.carbs+((e.nutrients.carbs!=null?e.nutrients.carbs:(e.nutrients.sugar||0)+(e.nutrients.fiber||0))), sugar:a.sugar+(e.nutrients.sugar||0), fiber:a.fiber+(e.nutrients.fiber||0), fat:a.fat+(e.nutrients.fat||0)}),{cal:0,protein:0,carbs:0,sugar:0,fiber:0,fat:0});
+      totalsEl.innerHTML = ['cal','protein','carbs','sugar','fiber','fat'].map(k=>{ const v=t[k]; return `<div style="text-align:center"><div class="muted" style="font-size:12px">${k.toUpperCase()}</div><div style="font-weight:800;font-size:18px">${k==='cal'?Math.round(v):round(v,1)}${k==='cal'?'':'g'}</div></div>` }).join('');
     }
 
     // ---------- Helpers ----------
@@ -465,8 +388,8 @@ i have made some changes to the code please see hem below no action needed yet j
 
     // ---------- Item dialog ----------
     const dlg = document.getElementById('itemDlg');
-    const pv = {g:$('#previewGrams'), cal:$('#pvCal'), pro:$('#pvPro'), sug:$('#pvSug'), fib:$('#pvFib'), fat:$('#pvFat')};
-    const editFields = { cal:$('#editCal'), pro:$('#editPro'), sug:$('#editSug'), fib:$('#editFib'), fat:$('#editFat'), density:$('#editDensity') };
+    const pv = {g:$('#previewGrams'), cal:$('#pvCal'), pro:$('#pvPro'), sug:$('#pvSug'), fib:$('#pvFib'), fat:$('#pvFat'), carbs:$('#pvCarb')};
+    const editFields = { cal:$('#editCal'), pro:$('#editPro'), carb:$('#editCarb'), sug:$('#editSug'), fib:$('#editFib'), fat:$('#editFat'), density:$('#editDensity') };
 
     function openItem(id){
       selectedBase = findFood(id);
@@ -489,14 +412,24 @@ i have made some changes to the code please see hem below no action needed yet j
     function chooseUnit(k){ mode='numeric'; numericUnit=k; renderUnits(); renderMetaphors(); updatePreview(); }
 
     function gramsFromCurrent(){ if(!selected) return 0; if(mode==='metaphor') return METAPHOR_PRESETS[metaphorChoice]?.grams||0; const u = NUMERIC_UNITS.find(x=>x.key===numericUnit); const val = Number(document.getElementById('numValue').value || numericValue || 0); numericValue = val; return Math.max(0, u? u.toGrams(val, selected):0); }
-    function nutrientsForGrams(g){ const pg = perGram(selected.nutrients); return {cal:pg.cal*g, protein:pg.protein*g, sugar:pg.sugar*g, fiber:pg.fiber*g, fat:pg.fat*g}; }
-    function updatePreview(){ const g = gramsFromCurrent(); const n = nutrientsForGrams(g); pv.g.textContent = `${Math.round(g)} g`; pv.cal.textContent = `${Math.round(n.cal)}`; pv.pro.textContent = `${round(n.protein,1)}`; pv.sug.textContent = `${round(n.sugar,1)}`; pv.fib.textContent = `${round(n.fiber,1)}`; pv.fat.textContent = `${round(n.fat,1)}`; }
+    function nutrientsForGrams(g){ const pg = perGram(selected.nutrients); return {cal:pg.cal*g, protein:pg.protein*g, sugar:pg.sugar*g, fiber:pg.fiber*g, fat:pg.fat*g, carbs:pg.carbs*g}; }
+    function updatePreview(){ const g = gramsFromCurrent(); const n = nutrientsForGrams(g); pv.g.textContent = `${Math.round(g)} g`; pv.cal.textContent = `${Math.round(n.cal)}`; pv.pro.textContent = `${round(n.protein,1)}`; pv.sug.textContent = `${round(n.sugar,1)}`; pv.fib.textContent = `${round(n.fiber,1)}`; pv.fat.textContent = `${round(n.fat,1)}`; pv.carbs.textContent = `${round(n.carbs,1)}`; }
 
     document.getElementById('numValue').addEventListener('input', ()=>{ mode='numeric'; updatePreview(); renderUnits(); renderMetaphors(); });
     document.getElementById('addBtn').addEventListener('click', ()=>{ const g=gramsFromCurrent(); if(g<=0){ alert('Portion needed'); return; } const n=nutrientsForGrams(g); entries=[{ id:String(Date.now()), timestamp:new Date().toISOString(), food_id:selected.id, name:selectedBase.name, grams:g, nutrients:n }, ...entries]; save(); closeItem(); });
 
-    function preloadEditor(effective, base){ editFields.cal.value=Number((effective.nutrients.cal??base.nutrients.cal)); editFields.pro.value=Number((effective.nutrients.protein??base.nutrients.protein)); editFields.sug.value=Number((effective.nutrients.sugar??base.nutrients.sugar)); editFields.fib.value=Number((effective.nutrients.fiber??base.nutrients.fiber)); editFields.fat.value=Number((effective.nutrients.fat??base.nutrients.fat)); editFields.density.value= Number((effective.density??base.density??'')); }
-    function collectEdits(){ return { nutrients:{ cal:Number(editFields.cal.value||0), protein:Number(editFields.pro.value||0), sugar:Number(editFields.sug.value||0), fiber:Number(editFields.fib.value||0), fat:Number(editFields.fat.value||0) }, density: editFields.density.value? Number(editFields.density.value): undefined }; }
+    function preloadEditor(effective, base){ 
+      editFields.cal.value=Number((effective.nutrients.cal??base.nutrients.cal));
+      editFields.pro.value=Number((effective.nutrients.protein??base.nutrients.protein));
+      const carbEff = (effective.nutrients.carbs!=null?effective.nutrients.carbs:((effective.nutrients.sugar||0)+(effective.nutrients.fiber||0)));
+      const carbBase = (base.nutrients.carbs!=null?base.nutrients.carbs:((base.nutrients.sugar||0)+(base.nutrients.fiber||0)));
+      editFields.carb.value=Number((carbEff??carbBase??0));
+      editFields.sug.value=Number((effective.nutrients.sugar??base.nutrients.sugar));
+      editFields.fib.value=Number((effective.nutrients.fiber??base.nutrients.fiber));
+      editFields.fat.value=Number((effective.nutrients.fat??base.nutrients.fat));
+      editFields.density.value= Number((effective.density??base.density??''));
+    }
+    function collectEdits(){ return { nutrients:{ cal:Number(editFields.cal.value||0), protein:Number(editFields.pro.value||0), carbs:Number(editFields.carb.value||0), sugar:Number(editFields.sug.value||0), fiber:Number(editFields.fib.value||0), fat:Number(editFields.fat.value||0) }, density: editFields.density.value? Number(editFields.density.value): undefined }; }
     function applyEditsToSelected(){ const ed=collectEdits(); selected={ ...selected, density: ed.density ?? selected.density, nutrients:{ ...selected.nutrients, ...ed.nutrients } }; updatePreview(); }
     document.getElementById('saveNutrients').addEventListener('click', ()=>{ const ed=collectEdits(); saveOverrideFor(selectedBase.id, ed); selected = effectiveFood(selectedBase); renderHome(); updatePreview(); alert('Saved custom nutrients for '+selectedBase.name); });
     document.getElementById('resetNutrients').addEventListener('click', ()=>{ clearOverrideFor(selectedBase.id); selected = { ...selectedBase }; preloadEditor(selected, selectedBase); renderHome(); updatePreview(); });
@@ -508,7 +441,7 @@ i have made some changes to the code please see hem below no action needed yet j
     // ---------- Ingredient dialog ----------
     const editDlg = document.getElementById('editDlg');
     const ingName=$('#ingName'), ingFolder=$('#ingFolder'), ingEmoji=$('#ingEmoji'), ingImg=$('#ingImg');
-    const ingCal=$('#ingCal'), ingPro=$('#ingPro'), ingSug=$('#ingSug'), ingFib=$('#ingFib'), ingFat=$('#ingFat'), ingDensity=$('#ingDensity');
+    const ingCal=$('#ingCal'), ingPro=$('#ingPro'), ingCarb=$('#ingCarb'), ingSug=$('#ingSug'), ingFib=$('#ingFib'), ingFat=$('#ingFat'), ingDensity=$('#ingDensity');
     let editingId = null;
 
     function populateFolderSelect(selectEl, selId){ selectEl.innerHTML = folders.filter(f=>!f.builtin || f.id==='unsorted').map(f=>`<option value="${f.id}">${f.name}</option>`).join(''); selectEl.value = selId || 'unsorted'; }
@@ -523,8 +456,8 @@ i have made some changes to the code please see hem below no action needed yet j
 
     function openEdit(id){
       editingId = id||null;
-      const item = id ? customFoods.find(f=>f.id===id) : { name:'', folderId:'unsorted', emoji:'', img:'', nutrients:{cal:0,protein:0,sugar:0,fiber:0,fat:0}, density:'' };
-      ingName.value=item.name||''; populateFolderSelect(ingFolder, item.folderId||'unsorted'); ingEmoji.value=item.emoji||''; ingCal.value=item.nutrients.cal||0; ingPro.value=item.nutrients.protein||0; ingSug.value=item.nutrients.sugar||0; ingFib.value=item.nutrients.fiber||0; ingFat.value=item.nutrients.fat||0; ingDensity.value=item.density||''; ingImg.value='';
+      const item = id ? customFoods.find(f=>f.id===id) : { name:'', folderId:'unsorted', emoji:'', img:'', nutrients:{cal:0,protein:0,carbs:0,sugar:0,fiber:0,fat:0}, density:'' };
+      ingName.value=item.name||''; populateFolderSelect(ingFolder, item.folderId||'unsorted'); ingEmoji.value=item.emoji||''; ingCal.value=item.nutrients.cal||0; ingPro.value=item.nutrients.protein||0; ingCarb.value=item.nutrients.carbs!=null?item.nutrients.carbs:((item.nutrients.sugar||0)+(item.nutrients.fiber||0)); ingSug.value=item.nutrients.sugar||0; ingFib.value=item.nutrients.fiber||0; ingFat.value=item.nutrients.fat||0; ingDensity.value=item.density||''; ingImg.value='';
       document.getElementById('deleteIngBtn').style.display = editingId? 'inline-block':'none';
       editDlg.showModal();
     }
@@ -532,7 +465,7 @@ i have made some changes to the code please see hem below no action needed yet j
     async function collectIngredientForm(){
       const name=ingName.value.trim(); const folderId=ingFolder.value||'unsorted'; if(!name){ alert('Name required'); return null; }
       let imgData = null; if(ingImg.files && ingImg.files[0]){ imgData = await fileToDataURL(ingImg.files[0]); }
-      return { name, folderId, emoji: (ingEmoji.value||'').trim(), img: imgData || (editingId? customFoods.find(f=>f.id===editingId)?.img : ''), per:'100g', nutrients:{ cal:Number(ingCal.value||0), protein:Number(ingPro.value||0), sugar:Number(ingSug.value||0), fiber:Number(ingFib.value||0), fat:Number(ingFat.value||0) }, density: ingDensity.value? Number(ingDensity.value): undefined };
+      return { name, folderId, emoji: (ingEmoji.value||'').trim(), img: imgData || (editingId? customFoods.find(f=>f.id===editingId)?.img : ''), per:'100g', nutrients:{ cal:Number(ingCal.value||0), protein:Number(ingPro.value||0), carbs:Number(ingCarb.value||0), sugar:Number(ingSug.value||0), fiber:Number(ingFib.value||0), fat:Number(ingFat.value||0) }, density: ingDensity.value? Number(ingDensity.value): undefined };
     }
 
     // ---------- Folder delete confirm modal ----------
@@ -575,7 +508,7 @@ i have made some changes to the code please see hem below no action needed yet j
         return `<div class="card" data-open="${f.id}">
           <div class="row" style="justify-content:space-between;align-items:center">
             <div class="row" style="gap:8px;align-items:center">
-              ${f.img? `<img class=\"thumb\" src=\"${f.img}\">` : '<span class="emoji">📁</span>'}
+              ${f.img? `<img class="thumb" src="${f.img}">` : '<span class="emoji">📁</span>'}
               <input type="text" ${disabled} value="${f.name}" data-id="${f.id}" class="select" style="min-width:160px"/>
             </div>
             <div class="row" style="gap:8px">
@@ -607,7 +540,7 @@ i have made some changes to the code please see hem below no action needed yet j
       // Picture change
       foldersList.querySelectorAll('input[data-type="img"]').forEach(inp=>{
         inp.addEventListener('click', e=> e.stopPropagation());
-        inp.addEventListener('change', async (e)=>{ const id=e.target.dataset.id; const file=e.target.files[0]; if(!file) return; const data=await fileToDataURL(file); const f=folders.find(x=>x.id===id); if(f){ f.img=data; persistFolders(); renderFoldersList(); }});
+        inp.addEventListener('change', async (e)=>{ const id=e.target.dataset.id; const file=e.target.files[0]; if(!file) return; const data=await fileToDataURL(file); const f=folders.find(x=>x.id===id); if(f){ f.img=data; persistFolders(); renderFoldersList(); } e.target.value=''; });
       });
       // Delete with confirm; stop propagation/default
       foldersList.querySelectorAll('button[data-action="del"]').forEach(btn=>{
@@ -634,7 +567,7 @@ i have made some changes to the code please see hem below no action needed yet j
     renderHome(); renderTotals(); renderLog(); renderFav();
 
     // expose (if needed)
-    window.openItem = openItem; window.chooseMetaphor = ()=>{}; window.chooseUnit = ()=>{};
+    window.openItem = openItem; window.chooseMetaphor = chooseMetaphor; window.chooseUnit = chooseUnit;
   </script>
 </body>
 </html>
